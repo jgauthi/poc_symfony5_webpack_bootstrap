@@ -33,6 +33,7 @@ php bin/console doctrine:fixtures:load -n
 # Installation Assets
 yarn install
 run yarn encore dev
+#yarn encore production # for production
 ```
 
 For the asset symlink install, launch a terminal on administrator in windows environment.
