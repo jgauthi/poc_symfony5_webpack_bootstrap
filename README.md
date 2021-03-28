@@ -28,6 +28,9 @@ php bin/console doctrine:migrations:migrate -n
 
 # Optional
 php bin/console doctrine:fixtures:load -n
+
+# Installation Assets
+yarn install
 ```
 
 For the asset symlink install, launch a terminal on administrator in windows environment.
