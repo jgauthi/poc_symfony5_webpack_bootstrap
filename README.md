@@ -6,6 +6,7 @@
 * The JSON extension must be enabled
 * The Ctype extension must be enabled
 * The date.timezone parameter must be defined in php.ini
+* Yarn command line
 
 More information on [symfony website](https://symfony.com/doc/5.2/reference/requirements.html).
 
@@ -31,6 +32,7 @@ php bin/console doctrine:fixtures:load -n
 
 # Installation Assets
 yarn install
+run yarn encore dev
 ```
 
 For the asset symlink install, launch a terminal on administrator in windows environment.
