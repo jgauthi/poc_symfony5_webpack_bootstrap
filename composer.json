@@ -2,7 +2,7 @@
   "name": "jgauthi/poc_symfony5_webpack_bootstrap",
   "description": "POC for use webpack + bootstrap in symfony",
   "type": "project",
-  "license": "LGPL",
+  "license": "GPL-3.0-only",
   "require": {
     "php": ">=8.0",
     "ext-ctype": "*",
