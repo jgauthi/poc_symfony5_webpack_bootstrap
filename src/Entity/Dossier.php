@@ -71,7 +71,7 @@ class Dossier
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -127,9 +127,13 @@ class Dossier
         return $this->client;
     }
 
-    public function setClient(Client $client): self
+    public function setClient(?Client $client): self
     {
-        $this->client = $client;
+        if ($client === null) {
+            unset($this->client);
+        } else {
+            $this->client = $client;
+        }
 
         return $this;
     }
@@ -167,9 +171,13 @@ class Dossier
         return $this->author;
     }
 
-    public function setAuthor(User $author): self
+    public function setAuthor(?User $author): self
     {
-        $this->author = $author;
+        if ($author === null) {
+            unset($this->author);
+        } else {
+            $this->author = $author;
+        }
 
         return $this;
     }

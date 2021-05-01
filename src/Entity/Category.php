@@ -30,7 +30,7 @@ class Category
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $image;
+    private string $image = '';
 
     /**
      * @Vich\UploadableField(mapping="category_images", fileNameProperty="image")
@@ -62,7 +62,7 @@ class Category
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -93,7 +93,7 @@ class Category
         return $this;
     }
 
-    public function getImageFile(): File
+    public function getImageFile(): ?File
     {
         return $this->file;
     }

@@ -155,6 +155,15 @@
     "phpdocumentor/type-resolver": {
         "version": "0.4.0"
     },
+    "phpstan/phpstan": {
+        "version": "0.12.85"
+    },
+    "phpstan/phpstan-doctrine": {
+        "version": "0.12.33"
+    },
+    "phpstan/phpstan-symfony": {
+        "version": "0.12.28"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },

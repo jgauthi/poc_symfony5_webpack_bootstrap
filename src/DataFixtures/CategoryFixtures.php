@@ -46,7 +46,7 @@ class CategoryFixtures extends Fixture implements DependentFixtureInterface
                 }
 
                 $alreadyUse[] = $randomDossier;
-                $category->addDossier($this->getReference("dossier_{$randomDossier}"));
+                $category->addDossier($this->getReference("dossier_{$randomDossier}")); // @phpstan-ignore-line
             }
 
             $manager->persist($category);
