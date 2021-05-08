@@ -12,14 +12,14 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version20190204112202 extends AbstractMigration
 {
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return '';
     }
 
-    public function up(Schema $schema) : void
+    public function up(Schema $schema): void
     {
-        if ($this->connection->getDatabasePlatform()->getName() === 'mysql') {
+        if ('mysql' === $this->connection->getDatabasePlatform()->getName()) {
             $this->addSql('CREATE TABLE category (id INT AUTO_INCREMENT NOT NULL, title VARCHAR(100) NOT NULL, image VARCHAR(255) NOT NULL, updated_at DATETIME DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
             $this->addSql('CREATE TABLE category_dossier (category_id INT NOT NULL, dossier_id INT NOT NULL, INDEX IDX_FA90A04912469DE2 (category_id), INDEX IDX_FA90A049611C0C56 (dossier_id), PRIMARY KEY(category_id, dossier_id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
             $this->addSql('CREATE TABLE client (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, address VARCHAR(100) DEFAULT NULL, city VARCHAR(50) DEFAULT NULL, country VARCHAR(50) DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
@@ -33,8 +33,7 @@ final class Version20190204112202 extends AbstractMigration
             $this->addSql('ALTER TABLE dossier ADD author_id INT NOT NULL');
             $this->addSql('ALTER TABLE dossier ADD CONSTRAINT FK_3D48E037F675F31B FOREIGN KEY (author_id) REFERENCES user (id)');
             $this->addSql('CREATE INDEX IDX_3D48E037F675F31B ON dossier (author_id)');
-        }
-        elseif ($this->connection->getDatabasePlatform()->getName() === 'sqlite') {
+        } elseif ('sqlite' === $this->connection->getDatabasePlatform()->getName()) {
             $this->addSql('CREATE TABLE category (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, title VARCHAR(100) NOT NULL, image VARCHAR(255) NOT NULL, updated_at DATETIME DEFAULT NULL)');
             $this->addSql('CREATE TABLE category_dossier (category_id INTEGER NOT NULL, dossier_id INTEGER NOT NULL, PRIMARY KEY(category_id, dossier_id))');
             $this->addSql('CREATE INDEX IDX_FA90A04912469DE2 ON category_dossier (category_id)');
@@ -63,18 +62,17 @@ final class Version20190204112202 extends AbstractMigration
             $this->addSql('DROP TABLE __temp__category_dossier');
             $this->addSql('CREATE INDEX IDX_FA90A049611C0C56 ON category_dossier (dossier_id)');
             $this->addSql('CREATE INDEX IDX_FA90A04912469DE2 ON category_dossier (category_id)');
-        }
-        else {
+        } else {
             $this->abortIf(true, 'Migration can only be executed safely on \'mysql\' or \'sqlite\'.');
         }
     }
 
-    public function down(Schema $schema) : void
+    public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
+        $this->abortIf('mysql' !== $this->connection->getDatabasePlatform()->getName(), 'Migration can only be executed safely on \'mysql\'.');
 
-        if ($this->connection->getDatabasePlatform()->getName() === 'mysql') {
+        if ('mysql' === $this->connection->getDatabasePlatform()->getName()) {
             $this->addSql('ALTER TABLE category_dossier DROP FOREIGN KEY FK_FA90A04912469DE2');
             $this->addSql('ALTER TABLE dossier DROP FOREIGN KEY FK_3D48E03719EB6921');
             $this->addSql('ALTER TABLE category_dossier DROP FOREIGN KEY FK_FA90A049611C0C56');
@@ -83,15 +81,13 @@ final class Version20190204112202 extends AbstractMigration
             $this->addSql('DROP TABLE client');
             $this->addSql('DROP TABLE dossier');
             $this->addSql('DROP TABLE user');
-        }
-        elseif ($this->connection->getDatabasePlatform()->getName() === 'sqlite') {
+        } elseif ('sqlite' === $this->connection->getDatabasePlatform()->getName()) {
             $this->addSql('DROP TABLE category');
             $this->addSql('DROP TABLE category_dossier');
             $this->addSql('DROP TABLE client');
             $this->addSql('DROP TABLE dossier');
             $this->addSql('DROP TABLE user');
-        }
-        else {
+        } else {
             $this->abortIf(true, 'Migration can only be executed safely on \'mysql\' or \'sqlite\'.');
         }
     }

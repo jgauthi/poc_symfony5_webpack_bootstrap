@@ -19,9 +19,6 @@ class DossierRepository extends ServiceEntityRepository
         parent::__construct($registry, Dossier::class);
     }
 
-    /**
-     * @return Query
-     */
     public function findVisibleQuery(): Query
     {
         $query = $this->createQueryBuilder('dossier')

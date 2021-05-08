@@ -19,7 +19,7 @@ class User implements UserInterface
     public const ROLE_EDITOR = 'ROLE_EDITOR';
     public const ROLE_ADMIN = 'ROLE_ADMIN';
 
-    public const DEFAULT_ROLES = [ self::ROLE_COMMENTATOR ];
+    public const DEFAULT_ROLES = [self::ROLE_COMMENTATOR];
 
     /**
      * @ORM\Id()

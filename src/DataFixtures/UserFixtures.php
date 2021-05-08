@@ -2,18 +2,17 @@
 namespace App\DataFixtures;
 
 use App\Entity\User;
-use Faker\Factory as FakerFactory;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Faker\Factory as FakerFactory;
 
 class UserFixtures extends Fixture
 {
     public const USERS = [
-        'admin'         => ['enabled' => true, 'roles' => [User::ROLE_ADMIN]],
-        'editor'        => ['enabled' => false, 'roles' => [User::ROLE_EDITOR]],
-        'writer'        => ['enabled' => true, 'roles' => [User::ROLE_WRITER]],
-        'commentator'   => ['enabled' => true, 'roles' => [User::ROLE_COMMENTATOR]],
+        'admin' => ['enabled' => true, 'roles' => [User::ROLE_ADMIN]],
+        'editor' => ['enabled' => false, 'roles' => [User::ROLE_EDITOR]],
+        'writer' => ['enabled' => true, 'roles' => [User::ROLE_WRITER]],
+        'commentator' => ['enabled' => true, 'roles' => [User::ROLE_COMMENTATOR]],
     ];
     public const PASSWORD = 'local';
     private \Faker\Generator $faker;
