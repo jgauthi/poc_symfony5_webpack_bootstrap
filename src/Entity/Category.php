@@ -1,9 +1,9 @@
 <?php
 namespace App\Entity;
 
-use Doctrine\Common\Collections\{ArrayCollection, Collection};
 use DateTime;
 use DateTimeInterface;
+use Doctrine\Common\Collections\{ArrayCollection, Collection};
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;

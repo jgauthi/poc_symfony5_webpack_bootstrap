@@ -1,9 +1,9 @@
 <?php
 namespace App\Entity;
 
-use Doctrine\Common\Collections\{ArrayCollection, Collection};
 use DateTimeImmutable;
 use DateTimeInterface;
+use Doctrine\Common\Collections\{ArrayCollection, Collection};
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -129,7 +129,7 @@ class Dossier
 
     public function setClient(?Client $client): self
     {
-        if ($client === null) {
+        if (null === $client) {
             unset($this->client);
         } else {
             $this->client = $client;
@@ -173,7 +173,7 @@ class Dossier
 
     public function setAuthor(?User $author): self
     {
-        if ($author === null) {
+        if (null === $author) {
             unset($this->author);
         } else {
             $this->author = $author;

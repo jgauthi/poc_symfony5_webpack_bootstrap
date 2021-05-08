@@ -3,17 +3,18 @@ namespace App\Event\Subscriber;
 
 use App\Entity\User;
 use Doctrine\Common\EventSubscriber;
-use Doctrine\ORM\Events;
 use Doctrine\ORM\Event\LifecycleEventArgs;
+use Doctrine\ORM\Events;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
- * Encode password before insert/update on database (Doctrine Event Subscriber)
- * @package App\Event\Subscriber
+ * Encode password before insert/update on database (Doctrine Event Subscriber).
  */
 class HashPasswordListener implements EventSubscriber
 {
-    public function __construct(private UserPasswordEncoderInterface $encoder) {}
+    public function __construct(private UserPasswordEncoderInterface $encoder)
+    {
+    }
 
     private function encodePassword(User $user): void
     {

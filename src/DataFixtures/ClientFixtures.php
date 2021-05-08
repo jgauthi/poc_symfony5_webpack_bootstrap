@@ -2,9 +2,9 @@
 namespace App\DataFixtures;
 
 use App\Entity\Client;
-use Faker\Factory as FakerFactory;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Faker\Factory as FakerFactory;
 
 class ClientFixtures extends Fixture
 {
@@ -18,7 +18,7 @@ class ClientFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
-        for ($i = 0; $i < self::NB_FIXTURE; $i++) {
+        for ($i = 0; $i < self::NB_FIXTURE; ++$i) {
             $client = new Client;
             $client->setName($this->faker->unique()->company)
                 ->setAddress($this->faker->unique()->optional(0.8)->address)
