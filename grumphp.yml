@@ -1,5 +1,17 @@
 grumphp:
   tasks:
+    eslint:
+      bin: node_modules/.bin/eslint
+      triggered_by: [ js, jsx, ts, tsx, vue ]
+      whitelist_patterns:
+        - /^assets\/(.*)/
+        - /^assets\/(.*)/(.*)
+      config: .eslintrc.json
+      debug: false
+      format: ~
+      max_warnings: ~
+      no_eslintrc: false
+      quiet: false
     git_blacklist:
       keywords:
         - "die("
