@@ -22,6 +22,8 @@ return (new PhpCsFixer\Config)
         'linebreak_after_opening_tag' => true,
         'lowercase_cast' => false,
         'mb_str_functions' => true,
+        'native_function_invocation' => false,
+        'native_constant_invocation' => false,
         'new_with_braces' => false,
         'no_php4_constructor' => true,
         'no_unreachable_default_argument_value' => true,
