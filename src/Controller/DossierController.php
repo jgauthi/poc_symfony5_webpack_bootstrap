@@ -14,9 +14,7 @@ class DossierController extends AbstractController
     {
     }
 
-    /**
-     * @Route("/", name="dossierList")
-     */
+    #[Route('/', name: 'dossierList')]
     public function dossierList(Request $request, PaginatorInterface $paginator): Response
     {
         $query = $this->dossierRepository->findVisibleQuery();
@@ -27,9 +25,7 @@ class DossierController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/dossier/{id}", name="dossierItem")
-     */
+    #[Route('/dossier/{id}', name: 'dossierItem')]
     public function dossierItem(Dossier $dossier): Response
     {
         return $this->render('dossierItem.html.twig', [

@@ -43,8 +43,10 @@ final class Version20190204112202 extends AbstractMigration
             $this->addSql('CREATE INDEX IDX_3D48E03719EB6921 ON dossier (client_id)');
 
             // Second migration
-            $this->addSql('CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL, name VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, roles CLOB NOT NULL --(DC2Type:simple_array)
-        , enabled BOOLEAN NOT NULL)');
+            $this->addSql(
+                'CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL, name VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, roles CLOB NOT NULL --(DC2Type:simple_array)
+        , enabled BOOLEAN NOT NULL)'
+            );
             $this->addSql('DROP INDEX IDX_3D48E03719EB6921');
             $this->addSql('CREATE TEMPORARY TABLE __temp__dossier AS SELECT id, client_id, title, created_date, active, content FROM dossier');
             $this->addSql('DROP TABLE dossier');

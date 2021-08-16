@@ -344,6 +344,9 @@
     "symfony/orm-pack": {
         "version": "v1.0.6"
     },
+    "symfony/password-hasher": {
+        "version": "v5.3.4"
+    },
     "symfony/polyfill-intl-grapheme": {
         "version": "v1.13.1"
     },
@@ -367,6 +370,9 @@
     },
     "symfony/polyfill-php80": {
         "version": "v1.17.1"
+    },
+    "symfony/polyfill-php81": {
+        "version": "v1.23.0"
     },
     "symfony/process": {
         "version": "v4.2.2"
