@@ -15,6 +15,9 @@ More information on [symfony website](https://symfony.com/doc/5.2/reference/requ
 
 Encore is inspired by Webpacker and Mix, but stays in the spirit of Webpack: using its features, concepts and naming conventions for a familiar feel. It aims to solve the most common Webpack use cases.
 
+In [master branch](https://github.com/jgauthi/poc_symfony5_webpack_bootstrap), this script use Javascript on assets folder. You can switch on [typescript branch](https://github.com/jgauthi/poc_symfony5_webpack_bootstrap/tree/typescript) for this alternative language.
+
+
 ## Installation
 Command lines:
 
