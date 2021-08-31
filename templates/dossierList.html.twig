@@ -3,12 +3,18 @@
 
 {% block body %}
     {% for dossier in dossierList %}
-        <div>
-            <p>
+        <div data-controller="dossierlist" class="dossierlist">
                 Title: {{ dossier.title }}, client: {{ dossier.client.name }}.<br>
                 Date: {{ dossier.createdDate|date('d/m/Y') }}<br>
-                <a href="{{ path('dossierItem', {'id': dossier.id}) }}">Consult dossier</a>
-            </p>
+            <div data-dossierlist-target="details">
+                <button
+                    class="btn btn-primary btn-sm"
+                    data-action="click->dossierlist#getDetails"
+                    data-id="{{ dossier.id }}"
+                >
+                    Details dossier
+                </button>
+            </div>
         </div>
     {% else %}
         <p>No dossiers.</p>
@@ -17,7 +23,4 @@
     <div class="navigation">
         {{ knp_pagination_render(dossierList) }}
     </div>
-
-    {# Message from Javascript (stimulus Controller), file loaded: assets/controllers/dossierlist_controller.js #}
-    <div data-controller="dossierlist"></div>
 {% endblock %}

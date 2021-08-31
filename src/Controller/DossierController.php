@@ -25,10 +25,10 @@ class DossierController extends AbstractController
         ]);
     }
 
-    #[Route('/dossier/{id}', name: 'dossierItem')]
-    public function dossierItem(Dossier $dossier): Response
+    #[Route('/dossier/ajax/details/{dossier}', name: 'dossierAjaxPageDetails', requirements: ['dossier' => '\d+'])]
+    public function dossierListAjaxDetails(Dossier $dossier): Response
     {
-        return $this->render('dossierItem.html.twig', [
+        return $this->render('dossierDetails.ajax.html.twig', [
             'dossier' => $dossier,
         ]);
     }

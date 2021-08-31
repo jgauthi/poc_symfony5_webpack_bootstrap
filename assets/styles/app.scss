@@ -65,3 +65,14 @@ main {
 footer {
   background: #18171b;
 }
+
+.description {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+div.dossierlist {
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  border-bottom: 1px grey groove;
+}
