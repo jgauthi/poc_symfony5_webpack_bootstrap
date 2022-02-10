@@ -2,6 +2,9 @@
     "behat/transliterator": {
         "version": "v1.2.0"
     },
+    "composer/pcre": {
+        "version": "1.0.1"
+    },
     "composer/semver": {
         "version": "3.2.4"
     },
@@ -296,9 +299,6 @@
             "ref": "5bb3a8c27df824d195fa68bb635d074854f8498f"
         }
     },
-    "symfony/http-client-contracts": {
-        "version": "v2.3.1"
-    },
     "symfony/http-foundation": {
         "version": "v4.2.2"
     },
@@ -388,6 +388,9 @@
             "version": "4.2",
             "ref": "5374e24d508ba8fd6ba9eb15170255fdb778316a"
         }
+    },
+    "symfony/runtime": {
+        "version": "v5.3.14"
     },
     "symfony/security-bundle": {
         "version": "3.3",
